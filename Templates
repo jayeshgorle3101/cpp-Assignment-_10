@@ -1,0 +1,38 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Function template
+template <typename T>
+T maximum(T a, T b) {
+    return (a > b) ? a : b;
+}
+
+// Class template
+template <typename T>
+class Box {
+    T value;
+public:
+    Box(T v) { value = v; }
+    void show() { cout << value << endl; }
+};
+
+int main() {
+    cout << "FUNCTION TEMPLATE" << endl;
+    cout << "Maximum integer: " << maximum(10, 20) << endl;
+    cout << "Maximum float: " << maximum(3.2f, 5.5f) << endl;
+
+    cout << "\nCLASS TEMPLATE" << endl;
+    Box<int> b1(100);
+    Box<float> b2(25.5f);
+    Box<string> b3("Hello C++");
+
+    cout << "Integer Value: ";
+    b1.show();
+    cout << "Float Value: ";
+    b2.show();
+    cout << "String Value: ";
+    b3.show();
+
+    return 0;
+}
